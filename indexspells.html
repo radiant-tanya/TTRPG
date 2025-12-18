@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DnD Spells List — Notion Wrapper</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    /* Container that will be embedded in Notion */
+    .frame-wrap {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden; /* prevents double scrollbars in some cases */
+      background: #fff;
+    }
+
+    /* We scale the embedded site down to fit Notion better */
+    .scaled {
+      transform-origin: 0 0;
+      /* Adjust this number to taste: 0.85–0.95 are common */
+      transform: scale(0.9);
+
+      /* Counteract scaling so it still fills the available area */
+      width: calc(100vw / 0.9);
+      height: calc(100vh / 0.9);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-wrap">
+    <iframe
+      class="scaled"
+      src="https://dndspellslist.com/"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allow="clipboard-read; clipboard-write"
+    ></iframe>
+  </div>
+</body>
+</html>
